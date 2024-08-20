@@ -13,7 +13,6 @@ from django.http import JsonResponse
 
 def get_routes(request):
     routes = [
-        'Talk with Postman with given below endpoints',
         'POST /api/user/signup/',
         'POST /api/user/login/',
         'GET /api/user/profile/',
