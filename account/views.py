@@ -9,6 +9,19 @@ from rest_framework.permissions import IsAuthenticated
 from django.contrib.auth import authenticate
 from account.renderers import UserRenderer
 from rest_framework_simplejwt.tokens import RefreshToken
+from django.http import JsonResponse
+
+def get_routes(request):
+    routes = [
+        'Talk with Postman with given below endpoints',
+        'POST /api/user/signup/',
+        'POST /api/user/login/',
+        'GET /api/user/profile/',
+        'POST /api/user/passward-change/',
+        'POST /api/user/send-reset-passward-email/',
+        'POST /api/user/reset-password/<uid>/<token>/',
+    ]
+    return JsonResponse(routes, safe=False)
 
 # generate token manually
 def get_tokens_for_user(user):
